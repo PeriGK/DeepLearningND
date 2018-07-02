@@ -102,6 +102,7 @@ class NeuralNetwork(object):
         # the error produced multiplied with the output in a prime manner(and not the weights alone)
         output_error_term = error * 1
         hidden_error = np.dot(self.weights_hidden_to_output, error)
+        # Error terms is the factor by which we should modify the weights
         hidden_error_term = hidden_error * hidden_outputs * (1 - hidden_outputs)
         
         # Weight step (input to hidden). How much will we update the weights?
